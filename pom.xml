@@ -7,7 +7,13 @@
     <groupId>org.informatorio</groupId>
     <artifactId>SistemaBancario</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5</version> <!-- Verifica la última versión en el repositorio Maven -->
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
