@@ -2,6 +2,7 @@ package org.informatorio;
 
 import org.informatorio.domain.Banco;
 import org.informatorio.domain.Cliente;
+import org.informatorio.domain.Cuenta;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
+import org.informatorio.enums.TipoCuenta;
+
 
 public class Main {
 
@@ -83,14 +87,14 @@ public class Main {
                                 // Abrir cuenta de ahorro
                                 System.out.print("Ingrese el monto inicial: ");
                                 double montoInicialAhorro = scanner.nextDouble();
-                                banco.abrirCuenta(clienteParaCuenta, Banco.TipoCuenta.AHORRO, montoInicialAhorro);
+                                banco.abrirCuenta(clienteParaCuenta, TipoCuenta.AHORRO, montoInicialAhorro);
                                 break;
 
                             case 2:
                                 // Abrir cuenta corriente
                                 System.out.print("Ingrese el monto inicial: ");
                                 double montoInicialCorriente = scanner.nextDouble();
-                                banco.abrirCuenta(clienteParaCuenta, Banco.TipoCuenta.CORRIENTE, montoInicialCorriente);
+                                banco.abrirCuenta(clienteParaCuenta, TipoCuenta.CORRIENTE, montoInicialCorriente);
                                 break;
 
                             default:

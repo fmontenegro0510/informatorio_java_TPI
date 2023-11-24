@@ -1,5 +1,7 @@
 package org.informatorio.domain;
 
+import org.informatorio.enums.TipoCuenta;
+
 public class Cuenta {
     private Long idCuenta;
     private String numeroCuenta;
@@ -31,6 +33,10 @@ public class Cuenta {
         return titular;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -42,10 +48,14 @@ public class Cuenta {
 
     public void retirar(double monto) {
         if (monto <= saldo) {
-            saldo -= monto;
-            System.out.println("Retiro exitoso. Nuevo saldo: " + saldo);
+            this.setSaldo(this.getSaldo() - monto);
+            System.out.println("Retiro exitoso. Nuevo saldo: " + this.getSaldo());
         } else {
             System.out.println("Fondos insuficientes para realizar el retiro.");
         }
+    }
+
+    public TipoCuenta getTipoCuenta() {
+        return TipoCuenta.INDEFINIDA;  // Cambiar según el tipo específico de la cuenta
     }
 }

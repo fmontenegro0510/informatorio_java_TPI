@@ -1,5 +1,7 @@
 package org.informatorio.enums;
 
 public enum TipoCuenta {
-    AHORRO,CORRIENTE
+    AHORRO,
+    CORRIENTE,
+    INDEFINIDA,
 }
