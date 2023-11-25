@@ -2,7 +2,7 @@ package org.informatorio.domain;
 
 import org.informatorio.enums.TipoCuenta;
 
-public class Cuenta {
+public abstract class Cuenta {
     private Long idCuenta;
     private String numeroCuenta;
     private double saldo;
@@ -41,11 +41,14 @@ public class Cuenta {
         return cliente;
     }
 
-    public void depositar(double monto) { }
-
-    public void retirar(double monto) { }
-
     public TipoCuenta getTipoCuenta() {
         return TipoCuenta.INDEFINIDA;  // Cambiar según el tipo específico de la cuenta
     }
+
+    // Métodos específicos de operaciones bancarias
+    public abstract void depositar(double monto);
+
+    public abstract void retirar(double monto);
+
+    public abstract void consultarSaldo();
 }

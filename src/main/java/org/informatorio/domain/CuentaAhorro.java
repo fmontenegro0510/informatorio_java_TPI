@@ -19,7 +19,26 @@ public class CuentaAhorro extends Cuenta {
     }
 
 
+    @Override
+    public void depositar(double monto) {
+        // Se incrementa el saldo y se calculan los intereses
+        setSaldo(getSaldo() + monto);
+        calcularIntereses();
+    }
 
+    @Override
+    public void retirar(double monto) {
+        if (monto <= getSaldo()) {
+            setSaldo(getSaldo() - monto);
+            System.out.println("Retiro exitoso. Nuevo saldo: " + getSaldo());
+        } else {
+            System.out.println("Saldo insuficiente para el retiro.");
+        }
 
+    }
 
+    @Override
+    public void consultarSaldo() {
+        System.out.println("Saldo de la cuenta de ahorro: " + getSaldo());
+    }
 }

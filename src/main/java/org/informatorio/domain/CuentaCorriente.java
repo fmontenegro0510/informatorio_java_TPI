@@ -21,4 +21,20 @@ public class CuentaCorriente extends Cuenta {
             System.out.println("Fondos insuficientes para realizar el retiro con el límite de sobregiro.");
         }
     }
+
+    @Override
+    public void depositar(double monto) {
+        if (monto <= getSaldo() + getLimiteSobregiro()) {
+            setSaldo(getSaldo() - monto);
+            System.out.println("Retiro exitoso. Nuevo saldo: " + getSaldo());
+        } else {
+            System.out.println("Fondos insuficientes para realizar el retiro con el límite de sobregiro.");
+        }
+    }
+
+    @Override
+    public void consultarSaldo() {
+        System.out.println("Saldo de la cuenta corriente: " + getSaldo());
+    }
+
 }
