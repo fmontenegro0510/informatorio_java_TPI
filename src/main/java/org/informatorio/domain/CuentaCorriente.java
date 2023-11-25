@@ -1,5 +1,7 @@
 package org.informatorio.domain;
 
+import org.informatorio.enums.TipoCuenta;
+
 public class CuentaCorriente extends Cuenta {
     private double limiteSobregiro;
 
@@ -20,6 +22,12 @@ public class CuentaCorriente extends Cuenta {
         } else {
             System.out.println("Fondos insuficientes para realizar el retiro con el límite de sobregiro.");
         }
+    }
+
+    @Override
+    public TipoCuenta getTipoCuenta() {
+        return TipoCuenta.CORRIENTE;  // Cambiar según el tipo específico de la cuenta
+
     }
 
     @Override

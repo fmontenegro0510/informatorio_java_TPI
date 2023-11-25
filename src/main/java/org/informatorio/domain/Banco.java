@@ -109,7 +109,7 @@ public class Banco {
 
         try (CSVWriter writer = new CSVWriter(new FileWriter(csvFile))) {
             // Escribir encabezados en el archivo CSV
-            writer.writeNext(new String[]{"Número único del titular", "Nombre de titular", "Saldo", "Tipo"});
+            writer.writeNext(new String[]{"ClienteID", "Nombre", "Saldo", "Tipo"});
 
             // Escribir detalles de las cuentas en el archivo CSV
             for (Cliente cliente : clientes) {

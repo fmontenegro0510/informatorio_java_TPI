@@ -41,9 +41,7 @@ public abstract class Cuenta {
         return cliente;
     }
 
-    public TipoCuenta getTipoCuenta() {
-        return TipoCuenta.INDEFINIDA;  // Cambiar según el tipo específico de la cuenta
-    }
+    public abstract TipoCuenta getTipoCuenta();
 
     // Métodos específicos de operaciones bancarias
     public abstract void depositar(double monto);

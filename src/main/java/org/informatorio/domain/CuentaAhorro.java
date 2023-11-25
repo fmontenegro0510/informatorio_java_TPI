@@ -1,5 +1,7 @@
 package org.informatorio.domain;
 
+import org.informatorio.enums.TipoCuenta;
+
 public class CuentaAhorro extends Cuenta {
     private double tasaInteres;
 
@@ -18,6 +20,12 @@ public class CuentaAhorro extends Cuenta {
         System.out.println("Intereses calculados y agregados al saldo.");
     }
 
+
+    @Override
+    public TipoCuenta getTipoCuenta() {
+        return TipoCuenta.AHORRO;  // Cambiar según el tipo específico de la cuenta
+
+    }
 
     @Override
     public void depositar(double monto) {

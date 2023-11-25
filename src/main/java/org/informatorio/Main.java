@@ -29,8 +29,10 @@ public class Main {
             System.out.println("3. Abrir nueva cuenta para un cliente");
             System.out.println("4. Consultar saldo de una cuenta");
             System.out.println("5. Calcular intereses de una cuenta de ahorro");
-            System.out.println("6. Exportar reporte de cuentas a CSV");
-            System.out.println("7. Salir");
+            System.out.println("6. Depositar Dinero en una cuenta");
+            System.out.println("7. Retirar Dinero de una cuenta");
+            System.out.println("8. Exportar reporte de cuentas a CSV");
+            System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
             // Leer la opción del usuario
@@ -135,20 +137,20 @@ public class Main {
                     }
                     break;
 
-                case 7:
+                case 6:
                     // Depositar Dinero
                     break;
 
-                case 8:
+                case 7:
                     // Retirar Dinero
                     break;
 
-                case 9:
+                case 8:
                     // Exportar reporte de cuentas a CSV
                     banco.exportarReporteCuentasCSV();
                     break;
 
-                case 10:
+                case 9:
                     // Salir del programa
                     System.out.println("Saliendo del programa.");
                     scanner.close();
