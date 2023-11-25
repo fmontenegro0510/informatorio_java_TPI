@@ -41,19 +41,9 @@ public class Cuenta {
         return cliente;
     }
 
-    public void depositar(double monto) {
-        saldo += monto;
-        System.out.println("Depósito exitoso. Nuevo saldo: " + saldo);
-    }
+    public void depositar(double monto) { }
 
-    public void retirar(double monto) {
-        if (monto <= saldo) {
-            this.setSaldo(this.getSaldo() - monto);
-            System.out.println("Retiro exitoso. Nuevo saldo: " + this.getSaldo());
-        } else {
-            System.out.println("Fondos insuficientes para realizar el retiro.");
-        }
-    }
+    public void retirar(double monto) { }
 
     public TipoCuenta getTipoCuenta() {
         return TipoCuenta.INDEFINIDA;  // Cambiar según el tipo específico de la cuenta

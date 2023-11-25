@@ -135,12 +135,20 @@ public class Main {
                     }
                     break;
 
-                case 6:
+                case 7:
+                    // Depositar Dinero
+                    break;
+
+                case 8:
+                    // Retirar Dinero
+                    break;
+
+                case 9:
                     // Exportar reporte de cuentas a CSV
                     banco.exportarReporteCuentasCSV();
                     break;
 
-                case 7:
+                case 10:
                     // Salir del programa
                     System.out.println("Saliendo del programa.");
                     scanner.close();

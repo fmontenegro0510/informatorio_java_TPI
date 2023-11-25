@@ -13,8 +13,13 @@ public class CuentaAhorro extends Cuenta {
     }
 
     public void calcularIntereses() {
-        double intereses = getSaldo() * tasaInteres;
+        double intereses = getSaldo() * getTasaInteres();
         depositar(intereses);
         System.out.println("Intereses calculados y agregados al saldo.");
     }
+
+
+
+
+
 }
