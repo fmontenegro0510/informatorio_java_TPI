@@ -23,10 +23,14 @@ En caso de necesitar un acceso online, haz click en el siguiente [enlace](https:
 
 [![MIT License](https://img.shields.io/badge/IntelliJ-IDEA-blue)](https://www.jetbrains.com/es-es/idea/) [![MIT License](https://img.shields.io/badge/GitHub-171515)](https://github.com/) [![MIT License](https://img.shields.io/badge/Apache%20Maven-E4682A)](https://maven.apache.org/)
 
+
+## Captura de Pantalla
+
+![](https://drive.google.com/file/d/1AVo9VdFZIi8UZBQZw3udZ12Jv_nuiN3V/view?usp=sharing)
+
 ## Dependencias
 
 - Para exportar csv [![MIT License](https://img.shields.io/badge/Open%20CSV-gray)](https://mvnrepository.com/artifact/com.opencsv/opencsv)
-
 
 
 
