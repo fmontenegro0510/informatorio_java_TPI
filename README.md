@@ -1,13 +1,7 @@
 
-![daftpunktocat-thomas](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/1165a144-24ea-46a4-a0bd-11c3a720d404)
-
-# Sistema Bancario
-
-![daftpunktocat-guy](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/4165c56e-aabc-4041-8246-6868ef65d945)
+# Sistema Bancario [OCTOBANK]
 
 Solución al escenario práctico de un sistema bancario simple, desarrollado en java para el curso dictado en el informatorio de la provincia del Chaco.
-
-
 
 
 ## Documentación
@@ -41,4 +35,3 @@ En caso de necesitar un acceso online, haz click en el siguiente [enlace](https:
 ## Autor
 
 - [Francisco Montenegro](https://www.github.com/fmontenegro0510)
-![astronaut](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/0faa7c86-e9ae-4f11-b49c-159002ba8e45)
