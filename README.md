@@ -7,7 +7,7 @@ Solución al escenario práctico de un sistema bancario simple, desarrollado en 
 ## Documentación
 
 El escenario como el trabajo práctico se encuentra en la carpeta Documents del proyecto.
-En caso de necesitar un acceso online, haz click en el siguiente [enlace]([https://docs.google.com/document/d/1gnRVAqdGBkROI9IZltRqSf8CuFhjREHMbZLXcYoyseg/edit](https://docs.google.com/document/d/1gnRVAqdGBkROI9IZltRqSf8CuFhjREHMbZLXcYoyseg/edit?usp=sharing))
+En caso de necesitar un acceso online, haz click en el siguiente [link](https://docs.google.com/document/d/1gnRVAqdGBkROI9IZltRqSf8CuFhjREHMbZLXcYoyseg/edit?usp=sharing)
 
 
 ## Captura de Pantalla
