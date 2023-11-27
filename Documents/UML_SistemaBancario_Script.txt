@@ -1,0 +1,89 @@
+@startuml
+
+class Banco {
+    -clientes: List<Cliente>
+    +Banco()
+    +crearCliente(nombre: String, direccion: String): Cliente
+    +obtenerTodosLosClientes(): List<Cliente>
+    +buscarClientePorId(idCliente: Long): Cliente
+    +agregarCliente(cliente: Cliente): void
+    +abrirCuenta(cliente: Cliente, tipoCuenta: TipoCuenta, montoInicial: double): void
+    +depositar(clienteDeposito: Cliente, numeroCuenta: String, monto: double): void
+    +retirar(clienteDeposito: Cliente, numeroCuenta: String, monto: double): void
+    +consultarSaldo(cliente: Cliente, numeroCuenta: String): void
+    +calcularIntereses(cliente: Cliente, numeroCuenta: String): void
+    +calcularIntereses(idCuenta: Long): void
+    +exportarReporteCuentasCSV(): void
+    -buscarCuentaPorNumero(cliente: Cliente, numeroCuenta: String): Cuenta
+    -buscarCuentaPorId(idCuenta: Long): Cuenta
+    -generarIdCliente(): Long
+    -generarIdCuenta(): Long
+    -generarNumeroCuenta(): String
+}
+
+class Cliente {
+    -idCliente: Long
+    -nombre: String
+    -direccion: String
+    -cuentas: List<Cuenta>
+    +Cliente(idCliente: Long, nombre: String, direccion: String)
+    +getIdCliente(): Long
+    +getNombre(): String
+    +getDireccion(): String
+    +getCuentas(): List<Cuenta>
+    +agregarCuenta(cuenta: Cuenta): void
+}
+
+abstract class Cuenta {
+    -idCuenta: Long
+    -numeroCuenta: String
+    -saldo: double
+    -titular: String
+    -cliente: Cliente
+    +Cuenta(idCuenta: Long, numeroCuenta: String, saldo: double, titular: String, cliente: Cliente)
+    +getIdCuenta(): Long
+    +getNumeroCuenta(): String
+    +getSaldo(): double
+    +getTitular(): String
+    +setSaldo(saldo: double): void
+    +getCliente(): Cliente
+    {abstract} +getTipoCuenta(): TipoCuenta
+    {abstract} +depositar(monto: double): void
+    {abstract} +retirar(monto: double): void
+    {abstract} +consultarSaldo(): void
+}
+
+class CuentaAhorro {
+    -tasaInteres: double
+    +CuentaAhorro(idCuenta: Long, numeroCuenta: String, saldo: double, titular: String, cliente: Cliente, tasaInteres: double)
+    +getTasaInteres(): double
+    +calcularIntereses(): void
+    +getTipoCuenta(): TipoCuenta
+    +depositar(monto: double): void
+    +retirar(monto: double): void
+    +consultarSaldo(): void
+}
+
+class CuentaCorriente {
+    -limiteSobregiro: double
+    +CuentaCorriente(idCuenta: Long, numeroCuenta: String, saldo: double, titular: String, cliente: Cliente, limiteSobregiro: double)
+    +getLimiteSobregiro(): double
+    +retirar(monto: double): void
+    +getTipoCuenta(): TipoCuenta
+    +depositar(monto: double): void
+    +consultarSaldo(): void
+}
+
+enum TipoCuenta {
+    AHORRO
+    CORRIENTE
+}
+
+Banco --* Cliente : agregación
+Banco *-- Cuenta : agregación
+Cliente --* Cuenta : composición
+Cuenta <|-- CuentaAhorro : herencia
+Cuenta <|-- CuentaCorriente : herencia
+
+
+@enduml

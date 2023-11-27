@@ -1,0 +1,34 @@
+@startuml
+
+entity "Cliente" {
+  + idCliente [PK]
+  --
+  nombre
+  direccion
+}
+
+entity "Cuenta" {
+  + idCuenta [PK]
+  --
+  numeroCuenta
+  saldo
+  titular
+}
+
+entity "CuentaAhorro" {
+  + idCuenta [PK, FK]
+  --
+  tasaInteres
+}
+
+entity "CuentaCorriente" {
+  + idCuenta [PK, FK]
+  --
+  limiteSobregiro
+}
+
+Client --o{ Account : "1"-"*" 
+Account --|{ SavingAccount : "1"
+Account --|{ CheckingAccount : "1"
+
+@enduml
