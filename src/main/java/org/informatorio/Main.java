@@ -23,6 +23,9 @@ public class Main {
 
         while (true) {
             // Mostrar opciones del menú
+            System.out.println("--------------------------");
+            System.out.println("-------- OCTOBANK --------");
+            System.out.println("--------------------------");
             System.out.println("----- Menú Principal -----");
             System.out.println("1. Crear nuevo cliente");
             System.out.println("2. Mostrar todos los clientes");
@@ -45,12 +48,10 @@ public class Main {
                     String nombre = scanner.next();
                     System.out.print("Ingrese la dirección del cliente: ");
                     String direccion = scanner.next();
-
                     // Crear cliente y agregarlo al banco
                     Cliente nuevoCliente = banco.crearCliente(nombre, direccion);
-                    System.out.println("Cliente creado con éxito.");
+                    System.out.println("Cliente creado con éxito. ID: " + nuevoCliente.getIdCliente() + " - Nombre: " + nuevoCliente.getNombre());
                     break;
-
                 case 2:
                     // Mostrar todos los clientes
                     List<Cliente> clientes = banco.obtenerTodosLosClientes();
@@ -58,7 +59,7 @@ public class Main {
                     if (clientes.isEmpty()) {
                         System.out.println("No hay clientes registrados.");
                     } else {
-                        System.out.println("----- Lista de Clientes -----");
+                        Sy0stem.out.println("----- Lista de Clientes -----");
                         for (Cliente cliente : clientes) {
                             System.out.println("ID: " + cliente.getIdCliente() + ", Nombre: " + cliente.getNombre() + ", Dirección: " + cliente.getDireccion());
                             System.out.println("Cuentas:");

@@ -15,6 +15,9 @@ public class CuentaAhorro extends Cuenta {
     }
 
     public void calcularIntereses() {
+     //   double intereses = this.getSaldo() * this.getTasaInteres();
+      //  this.depositar(intereses);
+       // System.out.println("Intereses calculados y agregados al saldo."
         double intereses = this.getSaldo() * this.getTasaInteres();
         this.depositar(intereses);
         System.out.println("Intereses calculados y agregados al saldo.");
@@ -29,23 +32,29 @@ public class CuentaAhorro extends Cuenta {
 
     @Override
     public void depositar(double monto) {
-        if ( monto >= 0 ) {
+        if (monto >= 0) {
             setSaldo(getSaldo() + monto);
-            calcularIntereses();
             System.out.println("Deposito exitoso. Nuevo saldo: " + getSaldo());
         } else {
-            System.out.println("Ocurrio un error al realizar el deposito, monto incorrecto.");
+            System.out.println("Ocurrió un error al realizar el depósito, monto incorrecto.");
         }
     }
 
     @Override
     public void retirar(double monto) {
-        if (monto <= getSaldo()) {
+    //    if (monto <= getSaldo()) {
+    //        setSaldo(getSaldo() - monto);
+    //        System.out.println("Retiro exitoso. Nuevo saldo: " + getSaldo());
+    //    } else {
+    //        System.out.println("Saldo insuficiente para el retiro.");
+     //   }
+        if (monto >= 0 && monto <= getSaldo()) {
             setSaldo(getSaldo() - monto);
             System.out.println("Retiro exitoso. Nuevo saldo: " + getSaldo());
         } else {
-            System.out.println("Saldo insuficiente para el retiro.");
+            System.out.println("Monto incorrecto o saldo insuficiente para el retiro.");
         }
+
     }
 
     @Override

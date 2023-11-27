@@ -57,7 +57,7 @@ public class Banco {
 
         if (nuevaCuenta != null) {
             cliente.agregarCuenta(nuevaCuenta);
-            System.out.println("Cuenta creada con éxito para " + cliente.getNombre());
+            System.out.println("Cuenta creada de tipo "+ nuevaCuenta.getTipoCuenta()  + ", con éxito para " + cliente.getNombre());
         }
 
     }
