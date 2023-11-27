@@ -26,8 +26,7 @@ En caso de necesitar un acceso online, haz click en el siguiente [enlace](https:
 
 ## Captura de Pantalla
 
-![](https://drive.google.com/file/d/1AVo9VdFZIi8UZBQZw3udZ12Jv_nuiN3V/view?usp=drive_link)
-![](https://drive.google.com/file/d/1AVo9VdFZIi8UZBQZw3udZ12Jv_nuiN3V/view)
+![](https://drive.google.com/file/d/1AVo9VdFZIi8UZBQZw3udZ12Jv_nuiN3V/view?usp=sharing)
 
 ## Dependencias
 
