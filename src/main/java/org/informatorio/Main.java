@@ -59,7 +59,7 @@ public class Main {
                     if (clientes.isEmpty()) {
                         System.out.println("No hay clientes registrados.");
                     } else {
-                        Sy0stem.out.println("----- Lista de Clientes -----");
+                        System.out.println("----- Lista de Clientes -----");
                         for (Cliente cliente : clientes) {
                             System.out.println("ID: " + cliente.getIdCliente() + ", Nombre: " + cliente.getNombre() + ", Dirección: " + cliente.getDireccion());
                             System.out.println("Cuentas:");
