@@ -119,6 +119,7 @@ public class Main {
                         banco.consultarSaldo(clienteConsulta, numeroCuentaConsulta);
                     } else {
                         System.out.println("Cliente no encontrado.");
+
                     }
                     break;
 
@@ -139,10 +140,36 @@ public class Main {
 
                 case 6:
                     // Depositar Dinero
+                    System.out.print("Ingrese el ID del cliente: ");
+                    Long idClienteDeposito = scanner.nextLong();
+                    Cliente clienteDeposito = banco.buscarClientePorId(idClienteDeposito);
+
+                    if (clienteDeposito != null) {
+                        System.out.print("Ingrese el número de cuenta: ");
+                        String numeroCuentaDeposito = scanner.next();
+                        System.out.print("Ingrese el monto a depositar: ");
+                        double montoDeposito = scanner.nextDouble();
+                        banco.depositar(clienteDeposito, numeroCuentaDeposito, montoDeposito);
+                    } else {
+                        System.out.println("Cliente no encontrado.");
+                    }
                     break;
 
                 case 7:
                     // Retirar Dinero
+                    System.out.print("Ingrese el ID del cliente: ");
+                    Long idClienteRetiro = scanner.nextLong();
+                    Cliente clienteRetiro = banco.buscarClientePorId(idClienteRetiro);
+
+                    if (clienteRetiro != null) {
+                        System.out.print("Ingrese el número de cuenta: ");
+                        String numeroCuentaRetiro = scanner.next();
+                        System.out.print("Ingrese el monto a extraer: ");
+                        double montoExtraccion = scanner.nextDouble();
+                        banco.retirar(clienteRetiro, numeroCuentaRetiro, montoExtraccion);
+                    } else {
+                        System.out.println("Cliente no encontrado.");
+                    }
                     break;
 
                 case 8:

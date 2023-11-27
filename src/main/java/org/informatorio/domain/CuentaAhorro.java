@@ -3,7 +3,7 @@ package org.informatorio.domain;
 import org.informatorio.enums.TipoCuenta;
 
 public class CuentaAhorro extends Cuenta {
-    private double tasaInteres;
+    private double tasaInteres = 0.1;
 
     public CuentaAhorro(Long idCuenta, String numeroCuenta, double saldo, String titular, Cliente cliente, double tasaInteres) {
         super(idCuenta, numeroCuenta, saldo, titular, cliente);
@@ -15,8 +15,8 @@ public class CuentaAhorro extends Cuenta {
     }
 
     public void calcularIntereses() {
-        double intereses = getSaldo() * getTasaInteres();
-        depositar(intereses);
+        double intereses = this.getSaldo() * this.getTasaInteres();
+        this.depositar(intereses);
         System.out.println("Intereses calculados y agregados al saldo.");
     }
 
@@ -29,9 +29,13 @@ public class CuentaAhorro extends Cuenta {
 
     @Override
     public void depositar(double monto) {
-        // Se incrementa el saldo y se calculan los intereses
-        setSaldo(getSaldo() + monto);
-        calcularIntereses();
+        if ( monto >= 0 ) {
+            setSaldo(getSaldo() + monto);
+            calcularIntereses();
+            System.out.println("Deposito exitoso. Nuevo saldo: " + getSaldo());
+        } else {
+            System.out.println("Ocurrio un error al realizar el deposito, monto incorrecto.");
+        }
     }
 
     @Override
@@ -42,7 +46,6 @@ public class CuentaAhorro extends Cuenta {
         } else {
             System.out.println("Saldo insuficiente para el retiro.");
         }
-
     }
 
     @Override

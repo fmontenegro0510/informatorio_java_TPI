@@ -48,10 +48,10 @@ public class Banco {
 
         switch (tipoCuenta) {
             case AHORRO:
-                nuevaCuenta = new CuentaAhorro(generarIdCuenta() , "AH" + generarNumeroCuenta(), montoInicial, cliente.getNombre(), cliente, 0.0);
+                nuevaCuenta = new CuentaAhorro(generarIdCuenta() , "AH" + generarNumeroCuenta(), montoInicial, cliente.getNombre(), cliente, 0.1);
                 break;
             case CORRIENTE:
-                nuevaCuenta = new CuentaCorriente(generarIdCuenta(), "CC" + generarNumeroCuenta(), montoInicial, cliente.getNombre(), cliente, 0.0);
+                nuevaCuenta = new CuentaCorriente(generarIdCuenta(), "CC" + generarNumeroCuenta(), montoInicial, cliente.getNombre(), cliente, 500);
                 break;
         }
 
@@ -63,17 +63,33 @@ public class Banco {
     }
 
 
-    public void depositar(Long idCuenta, double monto) {
-        Cuenta cuenta = buscarCuentaPorId(idCuenta);
+    public void depositar(Cliente clienteDeposito, String numeroCuenta, double monto) {
+        Cuenta cuenta = buscarCuentaPorNumero(clienteDeposito, numeroCuenta);
         if (cuenta != null) {
-            cuenta.depositar(monto);
+            if (cuenta instanceof CuentaAhorro) {
+                CuentaAhorro cuentaAhorro = (CuentaAhorro) cuenta;
+                cuentaAhorro.depositar(monto);
+            } else {
+                CuentaCorriente cuentaCorriente = (CuentaCorriente) cuenta;
+                cuentaCorriente.depositar(monto);
+            }
+        } else {
+            System.out.println("Cuenta no encontrada para el cliente " + clienteDeposito.getNombre());
         }
     }
 
-    public void retirar(Long idCuenta, double monto) {
-        Cuenta cuenta = buscarCuentaPorId(idCuenta);
+    public void retirar(Cliente clienteDeposito, String numeroCuenta, double monto) {
+        Cuenta cuenta = buscarCuentaPorNumero(clienteDeposito, numeroCuenta);
         if (cuenta != null) {
-            cuenta.retirar(monto);
+            if (cuenta instanceof CuentaAhorro) {
+                CuentaAhorro cuentaAhorro = (CuentaAhorro) cuenta;
+                cuentaAhorro.retirar(monto);
+            } else {
+                CuentaCorriente cuentaCorriente = (CuentaCorriente) cuenta;
+                cuentaCorriente.retirar(monto);
+            }
+        } else {
+            System.out.println("Cuenta no encontrada para el cliente " + clienteDeposito.getNombre());
         }
     }
 

@@ -3,7 +3,7 @@ package org.informatorio.domain;
 import org.informatorio.enums.TipoCuenta;
 
 public class CuentaCorriente extends Cuenta {
-    private double limiteSobregiro;
+    private double limiteSobregiro = 500;
 
     public CuentaCorriente(Long idCuenta, String numeroCuenta, double saldo, String titular, Cliente cliente, double limiteSobregiro) {
         super(idCuenta, numeroCuenta, saldo, titular, cliente);
@@ -32,11 +32,11 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void depositar(double monto) {
-        if (monto <= getSaldo() + getLimiteSobregiro()) {
-            setSaldo(getSaldo() - monto);
-            System.out.println("Retiro exitoso. Nuevo saldo: " + getSaldo());
+        if ( monto >= 0 ) {
+            setSaldo(getSaldo() + monto);
+            System.out.println("Deposito exitoso. Nuevo saldo: " + getSaldo());
         } else {
-            System.out.println("Fondos insuficientes para realizar el retiro con el límite de sobregiro.");
+            System.out.println("Ocurrio un error al realizar el deposito, monto incorrecto.");
         }
     }
 
