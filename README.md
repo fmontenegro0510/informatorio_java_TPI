@@ -1,5 +1,9 @@
 
+![daftpunktocat-thomas](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/1165a144-24ea-46a4-a0bd-11c3a720d404)
+
 # Sistema Bancario
+
+![daftpunktocat-guy](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/4165c56e-aabc-4041-8246-6868ef65d945)
 
 Solución al escenario práctico de un sistema bancario simple, desarrollado en java para el curso dictado en el informatorio de la provincia del Chaco.
 
@@ -25,8 +29,8 @@ En caso de necesitar un acceso online, haz click en el siguiente [enlace](https:
 
 
 ## Captura de Pantalla
+![SistemaBancarioConsole](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/72618abc-b86b-4a53-a1ac-fad8d32f867b)
 
-![](https://drive.google.com/file/d/1AVo9VdFZIi8UZBQZw3udZ12Jv_nuiN3V/view?usp=sharing)
 
 ## Dependencias
 
@@ -37,3 +41,4 @@ En caso de necesitar un acceso online, haz click en el siguiente [enlace](https:
 ## Autor
 
 - [Francisco Montenegro](https://www.github.com/fmontenegro0510)
+![astronaut](https://github.com/fmontenegro0510/informatorio_java_TPI/assets/8129084/0faa7c86-e9ae-4f11-b49c-159002ba8e45)
